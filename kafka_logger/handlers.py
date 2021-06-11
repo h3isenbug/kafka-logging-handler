@@ -293,7 +293,7 @@ class KafkaLoggingHandler(logging.Handler):
             # send logs in parallel
             for log in logs_from_buffer:
                 self.producer.send(self.kafka_topic_name, log)
-            self.producer.flush(2)  # blocks multiple parallel send calls()
+            self.producer.flush(10)  # blocks multiple parallel send calls()
 
     def schedule_flush(self):
         """Run a daemon thread that will flush buffer."""
@@ -346,7 +346,7 @@ class KafkaLoggingHandler(logging.Handler):
 
         if self.timer is not None:
             self.flush()
-        self.producer.close(timeout=2)
+        self.producer.close(timeout=10)
 
     def unhandled_exception(self, exctype, exception, traceback):
         """
