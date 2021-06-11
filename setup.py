@@ -7,9 +7,9 @@ PROJECT_ROOT, _ = os.path.split(__file__)
 NAME = "kafka-logging-handler"
 EMAILS = "mbirger@redhat.com, mjahudko@readhat.com, rmonegro@redhat.com"
 AUTHORS = "Mark Birger, Michaela Jahudkova, Robert Monegro"
-VERSION = "0.2.5"
+VERSION = "0.2.6"
 
-URL = "https://github.com/redhat-aqe/kafka-logging-handler"
+URL = "https://github.com/h3isenbug/kafka-logging-handler"
 LICENSE = "GPLv3"
 
 
@@ -34,7 +34,7 @@ setup(
     packages=find_packages(".", exclude=("tests")),
     install_requires=INSTALL_REQUIRES,
     url=URL,
-    download_url="https://github.com/redhat-aqe/kafka-logging-handler/archive/{0}.tar.gz".format(
+    download_url="https://github.com/h3isenbug/kafka-logging-handler/archive/{0}.tar.gz".format(
         VERSION
     ),
     description=SHORT_DESCRIPTION,
